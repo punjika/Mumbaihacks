@@ -1,0 +1,45 @@
+{% load static %}
+{% load media %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme List</title>
+</head>
+<body>
+    <h1>Meme Templates</h1>
+    <ul>
+        {% for meme in memes %}
+            <li>
+                <img src="{{ MEDIA_URL }}memes/{{ meme }}" alt="{{ meme }}" style="width:200px; height:auto;">
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+{% comment %} 
+{% load static %}
+{% load media %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme List</title>
+    <!-- Link to your CSS file if you have one -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}"> <!-- Adjust the path as necessary -->
+</head>
+<body>
+    <h1>Meme Templates</h1>
+    <ul>
+        <li><img src="{% get_media_prefix %}memes/meme1.jpg" alt="Meme 1" style="width:200px; height:auto;"></li>
+        <li><img src="{% get_media_prefix %}memes/meme2.jpg" alt="Meme 2" style="width:200px; height:auto;"></li>
+        <!-- Add more memes here as needed -->
+    </ul>
+</body>
+</html>
+ {% endcomment %}
